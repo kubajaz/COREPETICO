@@ -8,7 +8,7 @@ function Banner() {
                 alt='banner'
                 src='https://links.papareact.com/0fm'
                 fill
-                objectFit='cover'
+                className='object-cover'
             />
 
             <div className='absolute top-1/2 w-full text-center'>
