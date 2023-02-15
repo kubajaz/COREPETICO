@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+/* import { useAuth } from '../auth' */
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import Header from '../components/Header'

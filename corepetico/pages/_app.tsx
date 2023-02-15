@@ -1,7 +1,12 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
+//import { AuthProvider } from '../auth';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import NavbarComp from '../components/Navbar'
+import { AuthContextProvider } from '../context/AuthContext'
+import ProtectedRoute from '../components/ProtectedRoute'
 
 const progress = new ProgressBar({
   size: 4,
@@ -14,8 +19,26 @@ Router.events.on('routeChangeStart', progress.start);
 Router.events.on('routeChangeComplete', progress.finish);
 Router.events.on('routeChangeError', progress.finish);
 
+const noAuthRequired = ['/', '/login', '/signup']
+
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const router = useRouter()
+  console.log(process.env.NEXT_FIREBASE_APP_ID, process.env.NEXT_FIREBASE_AUTH_DOMAIN, 'key')
+  return (
+    <>
+      <AuthContextProvider>
+        <NavbarComp />
+        {noAuthRequired.includes(router.pathname) ? (
+          <Component {...pageProps} />
+        ) : <ProtectedRoute>
+          <Component {...pageProps} />
+        </ProtectedRoute>}
+
+      </AuthContextProvider>
+    </>
+
+  )
+
 }
 
 export default MyApp
