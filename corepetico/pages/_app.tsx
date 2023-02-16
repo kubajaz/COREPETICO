@@ -19,7 +19,7 @@ Router.events.on('routeChangeStart', progress.start);
 Router.events.on('routeChangeComplete', progress.finish);
 Router.events.on('routeChangeError', progress.finish);
 
-const noAuthRequired = ['/', '/login', '/signup']
+const noAuthRequired = ['/', '/login', '/signup', '/search']
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()

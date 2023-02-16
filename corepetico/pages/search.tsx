@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { format } from 'date-fns';
 import InfoCard from '../components/InfoCard';
+import 'react-dropdown/style.css';
 
 function Search({ searchResults }: any) {
     const router = useRouter();
@@ -12,7 +13,6 @@ function Search({ searchResults }: any) {
     const formattedStartDate = format(new Date(String(startDate)), "dd MMMM yy");
     const formattedEndDate = format(new Date(String(endDate)), "dd MMMM yy");
     const range = `${formattedStartDate} - ${formattedEndDate}`;
-
 
     return (
         <div className='h-screen'>
@@ -54,8 +54,6 @@ export default Search
 
 export async function getServerSideProps() {
     const searchResults = await fetch('https://jsonplaceholder.typicode.com/albums/2/photos').then(res => res.json());
-
-    /* 'https://links.papareact.com/isz' */
     return {
         props: {
             searchResults
