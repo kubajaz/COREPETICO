@@ -17,7 +17,7 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      
       <Banner />
 
       <main className='max-w-7xl mx-auto px-8 sm:px-16'>

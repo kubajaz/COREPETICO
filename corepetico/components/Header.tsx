@@ -11,6 +11,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 function Header({ placeholder }: any) {
   const [searchInput, setSearchInput] = useState('');
@@ -18,21 +19,6 @@ function Header({ placeholder }: any) {
   const [endDate, setEndDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests] = useState(1);
   const router = useRouter();
-
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false)
-  const dropDownRef = useRef<HTMLDivElement>(null)
-
-  const handleDropDownFocus = (state: boolean) => {
-    setDropdownOpen(!state)
-  }
-
-  const handleClickOutsideDropdown = (e: any) => {
-    if (dropdownOpen && !dropDownRef.current?.contains(e.target as Node)) {
-      setDropdownOpen(false)
-    }
-  }
-
-  window.addEventListener("click", handleClickOutsideDropdown)
 
   const selectionRange = {
     startDate: startDate,
@@ -79,7 +65,7 @@ function Header({ placeholder }: any) {
           onChange={(e) => setSearchInput(e.target.value)}
           className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'
           type="text"
-          placeholder={placeholder || 'Start your search'}
+          placeholder={'Search'}
         />
         <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2' />
       </div>
@@ -88,24 +74,16 @@ function Header({ placeholder }: any) {
         <p className='hidden md:inline cursor-pointer'>Become a corepetitor</p>
         <GlobeAltIcon className='h-6 cursor-pointer' />
 
-        <div>
-          <div className='app-drop-down-container' ref={dropDownRef}>
-            <div onClick={e => handleDropDownFocus(dropdownOpen)} className='flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer'>
-              <MenuIcon className='h-6' />
-              <UserCircleIcon className='h-6' />
-            </div>
-            {dropdownOpen && (
-              <ul>
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
-                <li>item4</li>
-              </ul>
-            )}
-          </div>
+        <div className="dropdown dropdown-bottom dropdown-end">
+          <label tabIndex={0} className="btn m-1"><div className='flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer'>
+            <MenuIcon className='h-6' />
+            <UserCircleIcon className='h-6' />
+          </div></label>
+          <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li><Link href="/login">Log In</Link></li>
+            <li><Link href="/signup">Sign Up</Link></li>
+          </ul>
         </div>
-
-
       </div>
 
       {searchInput && (
