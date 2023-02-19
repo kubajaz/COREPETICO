@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import {
   SearchIcon,
-  GlobeAltIcon,
   UsersIcon,
 } from '@heroicons/react/solid'
 import 'react-date-range/dist/styles.css'; // main style file
@@ -10,6 +9,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from 'next/router';
 import DropDown from './DropDown';
+import { useAuth } from '../../context/AuthContext';
 
 function Header() {
   const [searchInput, setSearchInput] = useState('');
@@ -17,6 +17,7 @@ function Header() {
   const [endDate, setEndDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests] = useState(1);
   const router = useRouter();
+  const { user } = useAuth()
 
   const selectionRange = {
     startDate: startDate,
@@ -50,12 +51,13 @@ function Header() {
   return (
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10'>
 
-      <div onClick={() => { router.push('/') }} className='relative flex items-center h-10 cursor-pointer'>
+      <div className='relative flex items-center h-10 cursor-pointer'>
         <Image
           alt="logo"
-          src="/../public/logo_name.png"
+          src="/../public/logoname.png"
           fill
           className='object-contain object-left'
+          onClick={() => { router.push('/') }}
         />
       </div>
 
@@ -67,15 +69,12 @@ function Header() {
           type="text"
           placeholder={'Search'}
         />
-        <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2' />
+        <SearchIcon className='hidden md:inline-flex h-8 bg-blue-800 text-white rounded-full p-2 cursor-pointer md:mx-2' />
       </div>
 
       <div className='flex space-x-4 items-center justify-end text-gray-500'>
-        <p className='hidden md:inline cursor-pointer'>Become a tutor</p>
-        <GlobeAltIcon className='h-6 cursor-pointer' />
-
+        Hello {user?.email}
         <DropDown/>
-        
       </div>
 
       {searchInput && (

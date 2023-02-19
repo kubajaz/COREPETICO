@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
@@ -8,12 +9,14 @@ const Signup = () => {
     email: '',
     password: '',
   })
+  const router = useRouter()
 
   const handleSignup = async (e: any) => {
     e.preventDefault()
 
     try {
       await signup(data.email, data.password)
+      router.push('/')
     } catch (err) {
       console.log(err)
     }

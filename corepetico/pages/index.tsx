@@ -3,10 +3,9 @@ import Head from 'next/head'
 /* import { useAuth } from '../auth' */
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
-import LargeCard from '../components/LargeCard'
-import MediumCard from '../components/MediumCard'
-import SmallCard from '../components/SmallCard'
+import LargeCard from '../components/Cards/LargeCard'
+import MediumCard from '../components/Cards/MediumCard'
+import SmallCard from '../components/Cards/SmallCard'
 
 const Home: NextPage = ({ exploreData, cardsData }: any) => {
 
@@ -56,15 +55,15 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const exploreData = await fetch('https://jsonplaceholder.typicode.com/albums/1/photos').
+  const exploreData:any = [] /* await fetch('https://jsonplaceholder.typicode.com/albums/1/photos').
     then((res) =>
       res.json()
-    );
+    ); */
 
-  const cardsData = await fetch('https://jsonplaceholder.typicode.com/albums/2/photos').
+  const cardsData:any = [] /* await fetch('https://jsonplaceholder.typicode.com/albums/2/photos').
     then((res) =>
       res.json()
-    );
+    ); */
 
   return {
     props: {

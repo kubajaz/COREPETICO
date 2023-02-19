@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
 
@@ -10,6 +10,8 @@ const Login = () => {
     email: '',
     password: '',
   })
+
+  console.log(user, 'u')
 
   const handleLogin = async (e: any) => {
     e.preventDefault()

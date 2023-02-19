@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
 import { format } from 'date-fns';
-import InfoCard from '../components/InfoCard';
+import InfoCard from '../components/Cards/InfoCard';
 import 'react-dropdown/style.css';
 
-function Search({ searchResults }: any) {
+function Tutors({ searchResults }: any) {
     const router = useRouter();
     const { location, startDate, endDate, noOfGuests } = router.query;
 
@@ -49,10 +48,10 @@ function Search({ searchResults }: any) {
     )
 }
 
-export default Search
+export default Tutors
 
 export async function getServerSideProps() {
-    const searchResults = await fetch('https://jsonplaceholder.typicode.com/albums/2/photos').then(res => res.json());
+    const searchResults:any = [] // await fetch('https://jsonplaceholder.typicode.com/albums/2/photos').then(res => res.json());
     return {
         props: {
             searchResults
