@@ -16,7 +16,6 @@ function Search({ searchResults }: any) {
 
     return (
         <div className='h-screen'>
-            <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
             <main className='flex'>
                 <section className='flex-grow pt-14 px-6'>

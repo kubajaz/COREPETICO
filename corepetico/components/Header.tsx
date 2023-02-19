@@ -1,19 +1,17 @@
 import Image from 'next/image'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import {
   SearchIcon,
   GlobeAltIcon,
-  MenuIcon,
-  UserCircleIcon,
   UsersIcon,
 } from '@heroicons/react/solid'
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from 'next/router';
-import Link from 'next/link'
+import DropDown from './DropDown';
 
-function Header({ placeholder }: any) {
+function Header() {
   const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -37,7 +35,7 @@ function Header({ placeholder }: any) {
 
   const search = () => {
     router.push({
-      pathname: '/search',
+      pathname: '/tutors',
       query: {
         location: searchInput,
         startDate: startDate.toISOString(),
@@ -45,6 +43,8 @@ function Header({ placeholder }: any) {
         noOfGuests
       }
     })
+
+    resetInput()
   }
 
   return (
@@ -71,19 +71,11 @@ function Header({ placeholder }: any) {
       </div>
 
       <div className='flex space-x-4 items-center justify-end text-gray-500'>
-        <p className='hidden md:inline cursor-pointer'>Become a corepetitor</p>
+        <p className='hidden md:inline cursor-pointer'>Become a tutor</p>
         <GlobeAltIcon className='h-6 cursor-pointer' />
 
-        <div className="dropdown dropdown-bottom dropdown-end">
-          <label tabIndex={0} className="btn m-1"><div className='flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer'>
-            <MenuIcon className='h-6' />
-            <UserCircleIcon className='h-6' />
-          </div></label>
-          <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><Link href="/login">Log In</Link></li>
-            <li><Link href="/signup">Sign Up</Link></li>
-          </ul>
-        </div>
+        <DropDown/>
+        
       </div>
 
       {searchInput && (

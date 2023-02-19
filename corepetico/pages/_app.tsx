@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { AuthContextProvider } from '../context/AuthContext'
 import ProtectedRoute from '../components/ProtectedRoute'
 import Header from '../components/Header'
+import Tutors from '../components/Tutors'
 
 const progress = new ProgressBar({
   size: 4,
@@ -19,13 +20,14 @@ Router.events.on('routeChangeStart', progress.start);
 Router.events.on('routeChangeComplete', progress.finish);
 Router.events.on('routeChangeError', progress.finish);
 
-const noAuthRequired = ['/', '/login', '/signup', '/search']
+const noAuthRequired = ['/', '/login', '/signup', '/tutors']
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  console.log(process.env.NEXT_FIREBASE_APP_ID, process.env.NEXT_FIREBASE_AUTH_DOMAIN, 'key')
+  
   return (
     <>
+      <Tutors/>
       <AuthContextProvider>
         {noAuthRequired.includes(router.pathname) ? (
           <>

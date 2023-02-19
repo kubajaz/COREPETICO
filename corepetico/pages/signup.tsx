@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext'
 
 const Signup = () => {
   const { user, signup } = useAuth()
-  console.log(user)
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -18,8 +17,6 @@ const Signup = () => {
     } catch (err) {
       console.log(err)
     }
-
-    console.log(data)
   }
 
   return (
