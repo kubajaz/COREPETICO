@@ -21,7 +21,7 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
 
       <main className='max-w-7xl mx-auto px-8 sm:px-16'>
         <section className='pt-6'>
-          <h2 className='text-4xl font-semibold pb-5'>Explore Nearby</h2>
+          <h2 className='text-4xl font-semibold pb-5 text-center'>About Us</h2>
 
           <div className='grid grid-cols-1'>
             {exploreData?.map((item: any) => (

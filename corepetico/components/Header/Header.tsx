@@ -12,7 +12,6 @@ import DropDown from './DropDown';
 import { useAuth } from '../../context/AuthContext';
 
 function Header() {
-  const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests] = useState(1);
@@ -30,22 +29,15 @@ function Header() {
     setEndDate(ranges.selection.endDate)
   }
 
-  const resetInput = () => {
-    setSearchInput('')
-  }
-
   const search = () => {
     router.push({
       pathname: '/tutors',
       query: {
-        location: searchInput,
         startDate: startDate.toISOString(),
         endDate: endDate.toISOString(),
         noOfGuests
       }
     })
-
-    resetInput()
   }
 
   return (
@@ -61,23 +53,20 @@ function Header() {
         />
       </div>
 
-      <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm'>
-        <input
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-          className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'
-          type="text"
-          placeholder={'Search'}
-        />
-        <SearchIcon className='hidden md:inline-flex h-8 bg-blue-800 text-white rounded-full p-2 cursor-pointer md:mx-2' />
-      </div>
+      {/* <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm cursor-pointer'>
+        <div className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'>Search</div>
+        <SearchIcon className='hidden md:inline-flex h-8 bg-blue-800 text-white rounded-full p-2 md:mx-2' />
+      </div> */}
+
+      <h3 className='text-2xl flex space-x-4 items-center justify-center text-gray-500 '>
+        Hello {user?.email}!
+      </h3>
 
       <div className='flex space-x-4 items-center justify-end text-gray-500'>
-        Hello {user?.email}
-        <DropDown/>
+        <DropDown />
       </div>
 
-      {searchInput && (
+      {/* {false && (
         <div className='flex flex-col col-span-3 mx-auto'>
           <DateRangePicker
             ranges={[selectionRange]}
@@ -100,11 +89,11 @@ function Header() {
 
           </div>
           <div className='flex'>
-            <button onClick={resetInput} className='flex-grow text-gray-500'>Cancel</button>
+          <button onClick={()=>{}} className='flex-grow text-gray-500'>Cancel</button>
             <button onClick={search} className='flex-grow text-red-400'>Search</button>
           </div>
         </div>
-      )}
+      )} */}
     </header>
   )
 }

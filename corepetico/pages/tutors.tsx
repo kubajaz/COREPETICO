@@ -7,7 +7,7 @@ import 'react-dropdown/style.css';
 
 function Tutors({ searchResults }: any) {
     const router = useRouter();
-    const { location, startDate, endDate, noOfGuests } = router.query;
+    const { startDate, endDate, noOfGuests } = router.query;
 
     const formattedStartDate = format(new Date(String(startDate)), "dd MMMM yy");
     const formattedEndDate = format(new Date(String(endDate)), "dd MMMM yy");
@@ -20,7 +20,7 @@ function Tutors({ searchResults }: any) {
                 <section className='flex-grow pt-14 px-6'>
                     <p className='text-xs'>300+ Stays - {range} - for {noOfGuests} Guests</p>
 
-                    <h1 className='text-3xl font-semibold mt-2 mb-6'>Stays in {location}</h1>
+                    <h1 className='text-3xl font-semibold mt-2 mb-6'>No siema</h1>
 
                     <div className='hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap'>
                         <p className='button'>Cancelation Flexibility</p>
