@@ -17,6 +17,7 @@ function Header() {
   const [noOfGuests, setNoOfGuests] = useState(1);
   const router = useRouter();
   const { user } = useAuth()
+  console.log(user)
 
   const selectionRange = {
     startDate: startDate,
@@ -54,12 +55,16 @@ function Header() {
       </div>
 
       {/* <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm cursor-pointer'>
-        <div className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'>Search</div>
+        <div className='flex-grow pl-5 bg-transparent outline-none text-sm text-blue-800 placeholder-gray-400'>Search</div>
         <SearchIcon className='hidden md:inline-flex h-8 bg-blue-800 text-white rounded-full p-2 md:mx-2' />
       </div> */}
 
       <h3 className='text-2xl flex space-x-4 items-center justify-center text-gray-500 '>
-        Hello {user?.email}!
+        {user?.displayName ?
+          <div className='hidden md:flex'>
+            Hello {user.displayName}!
+          </div> : null
+        }
       </h3>
 
       <div className='flex space-x-4 items-center justify-end text-gray-500'>

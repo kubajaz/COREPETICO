@@ -10,7 +10,7 @@ function DropDown() {
     return (
         <div className="dropdown dropdown-bottom dropdown-end">
             <label tabIndex={0} className="btn m-1">
-                <div className='flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer'>
+                <div className='flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer text-gray-700'>
                     <MenuIcon className='h-6' />
                     <UserCircleIcon className='h-6' />
                 </div>

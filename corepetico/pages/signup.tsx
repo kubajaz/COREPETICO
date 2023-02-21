@@ -1,17 +1,38 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
+
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Signup = () => {
   const { user, signup } = useAuth()
   const [data, setData] = useState({
     email: '',
     password: '',
+    displayName: '',
   })
   const router = useRouter()
+  const auth = getAuth();
+  
+  useEffect(()=>{
+    if(user){ //add displayName to firebase while signup
+      update(auth.currentUser, data.displayName)
+    }
+  }, [user])
 
-  const handleSignup = async (e: any) => {
+  const update = (currentUser:any, displayName:any) => {
+    updateProfile(currentUser, {
+      displayName: displayName
+    }).then(() => {
+      console.log('Profile updated!')
+    }).catch((error) => {
+      console.log(error)
+    });
+  }
+
+
+  const handleSignup = async (e:any) => {
     e.preventDefault()
 
     try {
@@ -31,13 +52,30 @@ const Signup = () => {
     >
       <h1 className="text-center my-3 ">Signup</h1>
       <Form onSubmit={handleSignup}>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="name"
+            placeholder="Enter name"
+            required
+            onChange={(e) =>
+              setData({
+                ...data,
+                displayName: e.target.value,
+              })
+            }
+            value={data.displayName}
+          />
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
             required
-            onChange={(e: any) =>
+            onChange={(e) =>
               setData({
                 ...data,
                 email: e.target.value,
@@ -53,7 +91,7 @@ const Signup = () => {
             type="password"
             placeholder="Password"
             required
-            onChange={(e: any) =>
+            onChange={(e) =>
               setData({
                 ...data,
                 password: e.target.value,

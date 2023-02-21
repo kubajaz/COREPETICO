@@ -20,7 +20,7 @@ function InfoCard({ url, title }:any) {
 
             <div className='border-b w-10 pt-2'></div>
 
-            <p className='pt-2 text-sm text-gray-500 flex-grow'>description description description description description</p>
+            <p className='pt-2 text-sm text-blue-800 flex-grow'>description description description description description</p>
 
             <div className='flex justify-between items-end pt-5'>
                 <p className='flex item-center'>
