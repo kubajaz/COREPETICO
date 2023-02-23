@@ -50,14 +50,14 @@ const Signup = () => {
         margin: 'auto',
       }}
     >
-      <h1 className="text-center my-3 ">Signup</h1>
+      <h1 className="text-center my-3 ">Zarejestruj się</h1>
       <Form onSubmit={handleSignup}>
 
         <Form.Group className="mb-3">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Nick</Form.Label>
           <Form.Control
             type="name"
-            placeholder="Enter name"
+            placeholder="Wpisz nick"
             required
             onChange={(e) =>
               setData({
@@ -70,10 +70,10 @@ const Signup = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Enter email"
+            placeholder="Wpisz email"
             required
             onChange={(e) =>
               setData({
@@ -86,10 +86,10 @@ const Signup = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Hasło</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="Wpisz hasło"
             required
             onChange={(e) =>
               setData({
@@ -102,7 +102,7 @@ const Signup = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Signup
+          Zarejestruj się
         </Button>
       </Form>
     </div>

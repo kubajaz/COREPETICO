@@ -18,8 +18,8 @@ function DropDown() {
             <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                 {user ? <li onClick={() => logout()}><Link style={{ textDecoration: 'none' }} href="/">Log Out</Link></li> :
                     <>
-                        <li><Link style={{ textDecoration: 'none' }} href="/login">Log In</Link></li>
-                        <li><Link style={{ textDecoration: 'none' }} href="/signup">Sign Up</Link></li>
+                        <li><Link style={{ textDecoration: 'none' }} href="/login">Logowanie</Link></li>
+                        <li><Link style={{ textDecoration: 'none' }} href="/signup">Rejestracja</Link></li>
                     </>
                 }
 

@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import LargeCard from '../components/Cards/LargeCard'
 import MediumCard from '../components/Cards/MediumCard'
 import SmallCard from '../components/Cards/SmallCard'
-import Modal from '../components/Order/Modal'
+import Modal from '../components/Order/OrderModal'
 import FeedbackModal from '../components/FeedbackModal'
 
 const Home: NextPage = ({ exploreData, cardsData }: any) => {
@@ -22,7 +22,7 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
 
       <main className='max-w-7xl mx-auto px-8 sm:px-16'>
         <section className='pt-6'>
-          <h2 className='text-4xl font-semibold pb-5 text-center text-gray-700'>About Us</h2>
+          <h2 className='text-4xl font-semibold pb-5 text-center text-gray-700'>O nas</h2>
 
           <p className='text-gray-500'>Lorem ipsum dolor sit amet. Et facilis quaerat ut eaque consequuntur eos quaerat expedita est itaque omnis. Qui nesciunt amet in soluta odit aut dolor distinctio. Aut excepturi beatae est ducimus aliquam qui accusantium perspiciatis nam suscipit laboriosam 33 ratione consequatur? Qui ullam sunt id autem sapiente qui minima veniam sed quidem reiciendis eum natus nostrum vel vero asperiores.
             Aut saepe quia quo voluptatem ducimus sit provident soluta et temporibus fuga et laboriosam ipsa. Id aliquam dignissimos ex porro voluptatem ea libero sequi rem quibusdam mollitia ea odit esse? Et eius repudiandae aut atque similique aut odio autem qui incidunt praesentium quo possimus sapiente et minima quia? </p>

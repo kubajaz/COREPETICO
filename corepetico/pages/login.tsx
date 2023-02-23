@@ -31,10 +31,10 @@ const Login = () => {
         margin: 'auto',
       }}
     >
-      <h1 className="text-center my-3 ">Login</h1>
+      <h1 className="text-center my-3 ">Zaloguj się</h1>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             onChange={(e: any) =>
               setData({
@@ -45,12 +45,12 @@ const Login = () => {
             value={data.email}
             required
             type="email"
-            placeholder="Enter email"
+            placeholder="Wpisz email"
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Hasło</Form.Label>
           <Form.Control
             onChange={(e: any) =>
               setData({
@@ -61,11 +61,11 @@ const Login = () => {
             value={data.password}
             required
             type="password"
-            placeholder="Password"
+            placeholder="Wpisz hasło"
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Login
+          Zaloguj się
         </Button>
       </Form>
     </div>

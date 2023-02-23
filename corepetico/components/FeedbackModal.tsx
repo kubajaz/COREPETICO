@@ -10,7 +10,7 @@ export default function Modal() {
                     type="button"
                     onClick={() => setShowModal(true)}
                 >
-                    Send Feedback
+                    Co możemy dla Ciebie zrobić?
                 </button>
             </div>
 
@@ -19,13 +19,13 @@ export default function Modal() {
                     <div
                         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
                     >
-                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        <div className="relative w-auto my-6 mx-auto max-w-sm">
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*header*/}
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                                     <h3 className="text-3xl font-semibold">
-                                        Send Feedback
+                                        Co możemy dla Ciebie zrobić?
                                     </h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -38,9 +38,10 @@ export default function Modal() {
                                 </div>
                                 {/*body*/}
                                 <div className="relative p-6 flex-auto">
-                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                    Lorem ipsum dolor sit amet. Et facilis quaerat ut eaque consequuntur eos quaerat expedita est itaque omnis. Qui nesciunt amet in soluta odit aut dolor distinctio. Aut excepturi beatae est ducimus aliquam qui accusantium perspiciatis nam suscipit laboriosam 33 ratione consequatur? Qui ullam sunt id autem sapiente qui minima veniam sed quidem reiciendis eum natus nostrum vel vero asperiores. Aut saepe quia quo voluptatem ducimus sit provident soluta et temporibus fuga et laboriosam ipsa. Id aliquam dignissimos ex porro voluptatem ea libero sequi rem quibusdam mollitia ea odit esse? Et eius repudiandae aut atque similique aut odio autem qui incidunt praesentium quo possimus sapiente et minima quia? 
+                                    <p className="my-4 text-slace-500 text-lg leading-relaxed">
+                                        Powiedz nam czego potrzebujesz!<br/>Co powinniśmy dodać, lub zmienić, aby uczyło Ci się jeszcze lepiej?<br/><br/>Możemy zrobić wszystko:)<br/>
                                     </p>
+                                    <input name="feedback_text" id="feedback_text" placeholder="Napisz wiadomość" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"/>
                                 </div>
                                 {/*footer*/}
                                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
@@ -49,14 +50,14 @@ export default function Modal() {
                                         type="button"
                                         onClick={() => setShowModal(false)}
                                     >
-                                        Close
+                                        Zamknij
                                     </button>
                                     <button
                                         className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
                                         onClick={() => setShowModal(false)}
                                     >
-                                        Save Changes
+                                        Wyślij
                                     </button>
                                 </div>
                             </div>

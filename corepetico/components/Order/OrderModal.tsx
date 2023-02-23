@@ -5,13 +5,13 @@ export default function Modal() {
     return (
         <>
             <div className='absolute top-1/2 w-full text-center'>
-                <p className='text-white text-xs sm:text-lg'>Order your perfect lesson<br /> Choose a topic, time and place!<br /> We will do our best to fulfill your wish</p>
+                <p className='text-white text-xs sm:text-lg'>Zamów idealną lekcję!<br />Wybierz temat, oraz wolną datę i godzinę<br />Pomożemy Ci z Twoim matematycznym problemem:)</p>
                 <button
                     className='text-blue-800 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'
                     type="button"
                     onClick={() => setShowModal(true)}
                 >
-                    Order Lesson
+                    Zamów lekcję
                 </button>
             </div>
             {showModal ? (
@@ -25,7 +25,7 @@ export default function Modal() {
                                 {/*header*/}
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                                     <h3 className="text-3xl font-semibold">
-                                        Order Lesson
+                                        Zamów lekcję
                                     </h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -39,7 +39,7 @@ export default function Modal() {
                                 {/*body*/}
                                 <div className="relative p-6 flex-auto">
                                     <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                    Lorem ipsum dolor sit amet. Et facilis quaerat ut eaque consequuntur eos quaerat expedita est itaque omnis. Qui nesciunt amet in soluta odit aut dolor distinctio. Aut excepturi beatae est ducimus aliquam qui accusantium perspiciatis nam suscipit laboriosam 33 ratione consequatur? Qui ullam sunt id autem sapiente qui minima veniam sed quidem reiciendis eum natus nostrum vel vero asperiores. Aut saepe quia quo voluptatem ducimus sit provident soluta et temporibus fuga et laboriosam ipsa. Id aliquam dignissimos ex porro voluptatem ea libero sequi rem quibusdam mollitia ea odit esse? Et eius repudiandae aut atque similique aut odio autem qui incidunt praesentium quo possimus sapiente et minima quia? 
+                                    Lorem ipsum dolor sit amet. Et facilis quaerat ut eaque consequuntur eos quaerat expedita est itaque omnis. Qui nesciunt amet in soluta odit aut dolor distinctio. Aut excepturi beatae est ducimus aliquam qui accusantium perspiciatis nam suscipit laboriosam 33 ratione consequatur? 
                                     </p>
                                 </div>
                                 {/*footer*/}
@@ -49,14 +49,14 @@ export default function Modal() {
                                         type="button"
                                         onClick={() => setShowModal(false)}
                                     >
-                                        Close
+                                        Zamknij
                                     </button>
                                     <button
                                         className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
                                         onClick={() => setShowModal(false)}
                                     >
-                                        Save Changes
+                                        Zamów
                                     </button>
                                 </div>
                             </div>
