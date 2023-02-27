@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
-
 import { getAuth, updateProfile } from "firebase/auth";
 
 const Signup = () => {
@@ -44,21 +43,19 @@ const Signup = () => {
   }
 
   return (
-    <div
-      style={{
-        width: '40%',
-        margin: 'auto',
-      }}
-    >
-      <h1 className="text-center my-3 ">Zarejestruj się</h1>
-      <Form onSubmit={handleSignup}>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Nick</Form.Label>
-          <Form.Control
+    <div className="w-2/5 mx-auto">
+      <h1 className="text-center my-3 text-2xl font-bold">Zarejestruj się</h1>
+      <form onSubmit={handleSignup}>
+        <div className="mb-3">
+          <label htmlFor="displayName" className="form-label">
+            Nick
+          </label>
+          <input
             type="name"
+            className="form-control"
             placeholder="Wpisz nick"
             required
+            id="displayName"
             onChange={(e) =>
               setData({
                 ...data,
@@ -67,14 +64,18 @@ const Signup = () => {
             }
             value={data.displayName}
           />
-        </Form.Group>
+        </div>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
             type="email"
+            className="form-control"
             placeholder="Wpisz email"
             required
+            id="email"
             onChange={(e) =>
               setData({
                 ...data,
@@ -83,14 +84,18 @@ const Signup = () => {
             }
             value={data.email}
           />
-        </Form.Group>
+        </div>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Hasło</Form.Label>
-          <Form.Control
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            Hasło
+          </label>
+          <input
             type="password"
+            className="form-control"
             placeholder="Wpisz hasło"
             required
+            id="password"
             onChange={(e) =>
               setData({
                 ...data,
@@ -99,14 +104,14 @@ const Signup = () => {
             }
             value={data.password}
           />
-        </Form.Group>
+        </div>
 
-        <Button variant="primary" type="submit">
+        <button type="submit" className="w-full">
           Zarejestruj się
-        </Button>
-      </Form>
+        </button>
+      </form>
     </div>
   )
 }
 
-export default Signup
+export default Signup;

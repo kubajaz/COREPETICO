@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
@@ -25,49 +24,59 @@ const Login = () => {
   }
 
   return (
-    <div
-      style={{
-        width: '40%',
-        margin: 'auto',
-      }}
-    >
-      <h1 className="text-center my-3 ">Zaloguj się</h1>
-      <Form onSubmit={handleLogin}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            onChange={(e: any) =>
+    <div className="w-2/5 mx-auto">
+      <h1 className="text-center my-3 text-2xl font-bold">Zaloguj się</h1>
+      <form onSubmit={handleLogin}>
+        <div className="mb-4">
+          <label htmlFor="email" className="block font-medium text-gray-700">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            value={data.email}
+            onChange={(e) =>
               setData({
                 ...data,
                 email: e.target.value,
               })
             }
-            value={data.email}
             required
-            type="email"
+            autoComplete="email"
+            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="Wpisz email"
           />
-        </Form.Group>
+        </div>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Hasło</Form.Label>
-          <Form.Control
-            onChange={(e: any) =>
+        <div className="mb-6">
+          <label htmlFor="password" className="block font-medium text-gray-700">
+            Hasło
+          </label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            value={data.password}
+            onChange={(e) =>
               setData({
                 ...data,
                 password: e.target.value,
               })
             }
-            value={data.password}
             required
-            type="password"
+            autoComplete="current-password"
+            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="Wpisz hasło"
           />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        </div>
+        <button
+          type="submit"
+          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
           Zaloguj się
-        </Button>
-      </Form>
+        </button>
+      </form>
     </div>
   )
 }
