@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Modal from './Order/OrderModal'
+import Modal from './Order/MainModal'
 
 function Banner() {
     return (

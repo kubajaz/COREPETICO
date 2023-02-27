@@ -1,4 +1,5 @@
 import React from 'react'
+import TimePick from './TimePick'
 
 function TimeModal({ setShowModal }:any) {
     return (
@@ -12,7 +13,7 @@ function TimeModal({ setShowModal }:any) {
                         {/*header*/}
                         <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                             <h3 className="text-3xl font-semibold">
-                                Zamów lekcję
+                                Wybierz czas lekcji
                             </h3>
                             <button
                                 className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -25,9 +26,7 @@ function TimeModal({ setShowModal }:any) {
                         </div>
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
-                            <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                Lorem ipsum dolor sit amet. Et facilis quaerat ut eaque consequuntur eos quaerat expedita est itaque omnis. Qui nesciunt amet in soluta odit aut dolor distinctio. Aut excepturi beatae est ducimus aliquam qui accusantium perspiciatis nam suscipit laboriosam 33 ratione consequatur?
-                            </p>
+                         <TimePick/>
                         </div>
                         {/*footer*/}
                         <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">

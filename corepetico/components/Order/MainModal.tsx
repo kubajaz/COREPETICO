@@ -2,7 +2,7 @@ import React from "react";
 import ContentModal from "./ContentModal";
 import TimeModal from "./TimeModal";
 
-export default function Modal() {
+export default function MainModal() {
     const [showModal, setShowModal] = React.useState(0); // 0-nothing, 1-place, 2-content
     return (
         <>

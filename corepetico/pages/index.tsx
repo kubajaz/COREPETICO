@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import LargeCard from '../components/Cards/LargeCard'
 import MediumCard from '../components/Cards/MediumCard'
 import SmallCard from '../components/Cards/SmallCard'
-import Modal from '../components/Order/OrderModal'
+import Modal from '../components/Order/MainModal'
 import FeedbackModal from '../components/FeedbackModal'
 
 const Home: NextPage = ({ exploreData, cardsData }: any) => {
