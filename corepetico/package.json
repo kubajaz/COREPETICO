@@ -23,6 +23,7 @@
     "react-datepicker": "^4.10.0",
     "react-dom": "18.2.0",
     "react-dropdown": "^1.11.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-tailwindcss-select": "^1.6.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },

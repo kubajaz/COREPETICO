@@ -1,15 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyD067xYxas7JSlQ9YFPPXJ2I6rb8jiR9eo", //process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID
+  authDomain: "corepetico-1c6b6.firebaseapp.com",
+  databaseURL: "https://corepetico-1c6b6-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "corepetico-1c6b6",
+  storageBucket: "corepetico-1c6b6.appspot.com",
+  messagingSenderId: "908086707099",
+  appId: "1:908086707099:web:2ce4f09a9834127c34573e"
 };
 
 
@@ -18,3 +18,13 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 
 export const auth = getAuth()
+////////
+const provider = new GoogleAuthProvider()
+
+export const signInWithGoogle = () => {
+  signInWithPopup(auth, provider).then((result) => {
+    console.log(result);
+  }).catch((error) => {
+    console.log(error);
+  })
+}

@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { Button } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
 import { getAuth, updateProfile } from "firebase/auth";
 
@@ -13,14 +12,14 @@ const Signup = () => {
   })
   const router = useRouter()
   const auth = getAuth();
-  
-  useEffect(()=>{
-    if(user){ //add displayName to firebase while signup
+
+  useEffect(() => {
+    if (user) { //add displayName to firebase while signup
       update(auth.currentUser, data.displayName)
     }
   }, [user])
 
-  const update = (currentUser:any, displayName:any) => {
+  const update = (currentUser: any, displayName: any) => {
     updateProfile(currentUser, {
       displayName: displayName
     }).then(() => {
@@ -31,7 +30,7 @@ const Signup = () => {
   }
 
 
-  const handleSignup = async (e:any) => {
+  const handleSignup = async (e: any) => {
     e.preventDefault()
 
     try {

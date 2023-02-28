@@ -1,16 +1,22 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { auth } from '../config/firebase';
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Login = () => {
   const router = useRouter()
-  const { user, login } = useAuth()
+  const { login } = useAuth()
   const [data, setData] = useState({
     email: '',
     password: '',
   })
+  const googleAuth = new GoogleAuthProvider();
 
-  console.log(user, 'u')
+  const googleLogin = async () => {
+    const result = await signInWithPopup(auth, googleAuth);
+  }
 
   const handleLogin = async (e: any) => {
     e.preventDefault()
@@ -77,6 +83,7 @@ const Login = () => {
           Zaloguj się
         </button>
       </form>
+      <button onClick={googleLogin}>GOOGLE</button>
     </div>
   )
 }
