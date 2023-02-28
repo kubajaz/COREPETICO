@@ -25,7 +25,8 @@
     "react-dropdown": "^1.11.0",
     "react-firebase-hooks": "^5.1.1",
     "react-tailwindcss-select": "^1.6.0",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "uid": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

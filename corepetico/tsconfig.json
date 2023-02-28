@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Header/Header.tsx", "pages/index.tsx", "components/List.js", "components/Dropdown.js", "pages/signup.tsx", "components/Order/Content/ContentPick.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Header/Header.tsx", "pages/index.tsx", "components/List.js", "components/Dropdown.js", "pages/signup.tsx", "components/Order/Content/ContentPick.js", "components/CRUD.js"],
   "exclude": ["node_modules"]
 }

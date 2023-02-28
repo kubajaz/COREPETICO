@@ -2,11 +2,11 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Router, { useRouter } from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
-//import { AuthProvider } from '../auth';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { AuthContextProvider } from '../context/AuthContext'
 import ProtectedRoute from '../components/ProtectedRoute'
 import Header from '../components/Header/Header'
+import CRUD from '../components/CRUD'
 
 const progress = new ProgressBar({
   size: 4,
@@ -23,9 +23,10 @@ const noAuthRequired = ['/', '/login', '/signup', '/tutors']
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  
+
   return (
     <>
+      <CRUD />
       <AuthContextProvider>
         {noAuthRequired.includes(router.pathname) ? (
           <>
