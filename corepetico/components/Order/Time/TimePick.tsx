@@ -5,9 +5,9 @@ import "react-datepicker/dist/react-datepicker.css";
 function TimePick() {
     const [startDate, setStartDate] = useState(new Date());
     return (
-        <>
+        <div className='w-40'>
             <div className='p-4'>
-            <p>Wybierz datę</p>
+                <p>Wybierz datę</p>
                 <DatePicker
                     selected={startDate}
                     onChange={(date: any) => setStartDate(date)}
@@ -30,7 +30,7 @@ function TimePick() {
                     className='shadow-md rounded-full hover:shadow-xl active:scale-90 transition duration-150 cursor-pointer'
                 />
             </div>
-        </>
+        </div>
     );
 };
 
