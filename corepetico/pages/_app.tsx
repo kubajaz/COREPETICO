@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { AuthContextProvider } from '../context/AuthContext'
 import ProtectedRoute from '../components/ProtectedRoute'
 import Header from '../components/Header/Header'
-import CRUD from '../components/CRUD'
 
 const progress = new ProgressBar({
   size: 4,
@@ -26,7 +25,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <CRUD />
       <AuthContextProvider>
         {noAuthRequired.includes(router.pathname) ? (
           <>
