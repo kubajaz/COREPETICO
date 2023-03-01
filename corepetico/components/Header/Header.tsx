@@ -24,7 +24,7 @@ function Header() {
       <div className='relative flex items-center h-10 cursor-pointer'>
         <Image
           alt="logo"
-          src="/../public/logo_name_transparent.png"
+          src="/logo_name_transparent.png"
           fill
           sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,

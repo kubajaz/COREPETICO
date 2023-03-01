@@ -7,7 +7,7 @@ function Banner() {
         <div className='relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[600px] 2xl:h-[700px]'>
             <Image
                 alt='banner'
-                src='/../public/banner.jpg'
+                src='/banner.jpg'
                 fill
                 className='object-cover'
             />
