@@ -19,9 +19,9 @@ function CRUD() {
       setTodos([]);
       const data = snapshot.val();
       if (data !== null) {
-        Object.values(data).map((todo) => {
+        {data.todos ? Object.values(data.todos).map((todo) => {
           setTodos((oldArray) => [...oldArray, todo]);
-        });
+        }) : null}
       }
     });
   }, []);
@@ -29,7 +29,7 @@ function CRUD() {
   //write
   const writeToDatabase = () => {
     const uuid = uid();
-    set(ref(db, `/${uuid}`), {
+    set(ref(db, `/todos/${uuid}`), {
       todo,
       uuid,
     });
@@ -45,7 +45,7 @@ function CRUD() {
   };
 
   const handleSubmitChange = () => {
-    update(ref(db, `/${tempUuid}`), {
+    update(ref(db, `/todos/${tempUuid}`), {
       todo,
       uuid: tempUuid,
     });
@@ -56,7 +56,7 @@ function CRUD() {
 
   //delete
   const handleDelete = (todo) => {
-    remove(ref(db, `/${todo.uuid}`));
+    remove(ref(db, `/todos/${todo.uuid}`));
   };
 
   return (

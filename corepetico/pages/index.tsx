@@ -36,7 +36,7 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
           </div> */}
 
         </section>
-        <FeedbackModal></FeedbackModal>
+        <FeedbackModal/>
 
         {/* <div className='w-full text-center'>
           <button className='text-white bg-blue-800 px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>Send Feedback</button>
