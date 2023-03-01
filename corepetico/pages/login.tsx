@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { auth } from '../config/firebase';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Login = () => {
   const router = useRouter()

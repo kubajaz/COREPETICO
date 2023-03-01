@@ -3,7 +3,7 @@ import ContentModal from "./Content/ContentModal";
 import TimeModal from "./Time/TimeModal";
 
 export default function MainModal() {
-    const [showModal, setShowModal] = React.useState(0); // 0-nothing, 1-place, 2-content
+    const [showModal, setShowModal] = React.useState(0); // 0-nothing, 1-time, 2-content
     return (
         <>
             <div className='absolute top-1/2 w-full text-center'>

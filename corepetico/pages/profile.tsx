@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import InfoCard from '../components/Cards/InfoCard';
 import 'react-dropdown/style.css';
 
-function Tutors({ searchResults }: any) {
+function Profile({ searchResults }: any) {
     const router = useRouter();
     const { startDate, endDate, noOfGuests } = router.query;
 
@@ -48,7 +48,7 @@ function Tutors({ searchResults }: any) {
     )
 }
 
-export default Tutors
+export default Profile
 
 export async function getServerSideProps() {
     const searchResults:any = [] // await fetch('https://jsonplaceholder.typicode.com/albums/2/photos').then(res => res.json());
