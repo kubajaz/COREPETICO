@@ -7,18 +7,18 @@ import 'react-dropdown/style.css';
 
 function Profile({ searchResults }: any) {
     const router = useRouter();
-    const { startDate, endDate, noOfGuests } = router.query;
+    //const { startDate, endDate, noOfGuests } = router.query;
 
-    const formattedStartDate = format(new Date(String(startDate)), "dd MMMM yy");
-    const formattedEndDate = format(new Date(String(endDate)), "dd MMMM yy");
-    const range = `${formattedStartDate} - ${formattedEndDate}`;
+    //const formattedStartDate = format(new Date(String(startDate)), "dd MMMM yy");
+    //const formattedEndDate = format(new Date(String(endDate)), "dd MMMM yy");
+    //const range = `${formattedStartDate} - ${formattedEndDate}`;
 
     return (
         <div className='h-screen'>
 
             <main className='flex'>
                 <section className='flex-grow pt-14 px-6'>
-                    <p className='text-xs'>300+ Stays - {range} - for {noOfGuests} Guests</p>
+                    {/* <p className='text-xs'>300+ Stays - {range} - for {noOfGuests} Guests</p> */}
 
                     <h1 className='text-3xl font-semibold mt-2 mb-6'>No siema</h1>
 
